@@ -1,7 +1,38 @@
+:root {
+    --primary-bg-color: #f4f4f4;
+    --secondary-bg-color: #fff;
+    --text-color: #333;
+    --button-bg-color: #5cb85c;
+    --button-hover-bg-color: #4cae4c; /* Added */
+    --button-text-color: white;
+    --border-color: #ddd;
+    --item-bg-color: #eee;
+    --item-completed-bg-color: #e0e0e0;
+    --item-completed-text-color: #aaa;
+    --button-danger-bg-color: #d9534f;
+    --button-danger-hover-bg-color: #c9302c;
+}
+
+.dark-mode {
+    --primary-bg-color: #333;
+    --secondary-bg-color: #444;
+    --text-color: #f1f1f1;
+    --button-bg-color: #007bff;
+    --button-hover-bg-color: #0056b3; /* Added */
+    --button-text-color: white;
+    --border-color: #666;
+    --item-bg-color: #555;
+    --item-completed-bg-color: #222;
+    --item-completed-text-color: #888;
+    --button-danger-bg-color: #dc3545;
+    --button-danger-hover-bg-color: #c82333;
+}
+
 body {
     font-family: sans-serif;
     margin: 0;
-    background-color: #f4f4f4;
+    background-color: var(--primary-bg-color);
+    color: var(--text-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,7 +40,7 @@ body {
 }
 
 .container {
-    background-color: #fff;
+    background-color: var(--secondary-bg-color);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -18,22 +49,24 @@ body {
 
 h1 {
     text-align: center;
-    color: #333;
+    color: var(--text-color);
 }
 
 input[type="text"] {
     width: calc(100% - 88px); /* Adjust width to accommodate button */
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
     border-radius: 4px;
     box-sizing: border-box;
+    background-color: var(--secondary-bg-color); /* Added for dark mode */
+    color: var(--text-color); /* Added for dark mode */
 }
 
 button {
     padding: 10px 15px;
-    background-color: #5cb85c;
-    color: white;
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -41,7 +74,7 @@ button {
 }
 
 button:hover {
-    background-color: #4cae4c;
+    background-color: var(--button-hover-bg-color);
 }
 
 ul {
@@ -52,11 +85,12 @@ ul {
 
 li {
     padding: 10px;
-    background-color: #eee;
-    border-bottom: 1px solid #ddd;
+    background-color: var(--item-bg-color);
+    border-bottom: 1px solid var(--border-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: var(--text-color); /* Added for dark mode */
 }
 
 li:last-child {
@@ -65,15 +99,15 @@ li:last-child {
 
 li.completed {
     text-decoration: line-through;
-    color: #aaa;
-    background-color: #e0e0e0;
+    color: var(--item-completed-text-color);
+    background-color: var(--item-completed-bg-color);
 }
 
 #deleteButton, #clearButton {
-    background-color: #d9534f;
+    background-color: var(--button-danger-bg-color);
     margin-top: 10px; /* Add margin above these buttons */
 }
 
 #deleteButton:hover, #clearButton:hover {
-    background-color: #c9302c;
+    background-color: var(--button-danger-hover-bg-color);
 }
