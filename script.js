@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const taskList = document.getElementById('taskList');
     const deleteButton = document.getElementById('deleteButton');
     const clearButton = document.getElementById('clearButton');
+    const themeToggleButton = document.getElementById('theme-toggle-button');
+    const bodyElement = document.body;
 
     // Load tasks from local storage
     loadTasks();
@@ -15,6 +17,15 @@ document.addEventListener('DOMContentLoaded', () => {
     taskInput.addEventListener('keypress', function(event) {
         if (event.key === 'Enter') {
             addTask();
+        }
+    });
+    themeToggleButton.addEventListener('click', () => {
+        bodyElement.classList.toggle('dark-mode');
+        // Optionally, save theme preference to localStorage
+        if (bodyElement.classList.contains('dark-mode')) {
+            localStorage.setItem('theme', 'dark-mode');
+        } else {
+            localStorage.removeItem('theme');
         }
     });
 
@@ -87,6 +98,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function loadTasks() {
+        // Load theme preference from localStorage
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            bodyElement.classList.add(savedTheme);
+        } else {
+            // If no saved theme, check system preference
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                bodyElement.classList.add('dark-mode');
+                // Optionally, you could also save this to localStorage if you want
+                // localStorage.setItem('theme', 'dark-mode');
+            }
+        }
+
         const tasks = JSON.parse(localStorage.getItem('tasks'));
         if (tasks) {
             tasks.forEach(task => {
