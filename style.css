@@ -111,3 +111,74 @@ li.completed {
 #deleteButton:hover, #clearButton:hover {
     background-color: var(--button-danger-hover-bg-color);
 }
+
+/* Dashboard Specific Styles */
+.dashboard-nav {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.dashboard-nav a {
+    text-decoration: none;
+    color: var(--button-bg-color);
+    font-weight: bold;
+}
+
+.dashboard-nav a:hover {
+    text-decoration: underline;
+}
+
+.dashboard-stats {
+    background-color: var(--item-bg-color);
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.dashboard-stats h2 {
+    margin-top: 0;
+    color: var(--text-color);
+}
+
+.dashboard-stats p {
+    margin: 5px 0;
+    color: var(--text-color);
+}
+
+.dashboard-breakdown {
+    background-color: var(--item-bg-color);
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.dashboard-breakdown h2 {
+    margin-top: 0;
+    color: var(--text-color);
+}
+
+.dashboard-breakdown ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.dashboard-breakdown li {
+    padding: 8px 0;
+    color: var(--text-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.dashboard-breakdown li:last-child {
+    border-bottom: none;
+}
+
+/* Responsive adjustments for dashboard if needed */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .dashboard-stats, .dashboard-breakdown {
+        padding: 10px;
+    }
+}

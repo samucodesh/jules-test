@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Task Dashboard</h1>
+        <div class="dashboard-nav">
+            <a href="index.html">Back to To-Do List</a>
+        </div>
+        <div class="dashboard-stats">
+            <h2>Overall Statistics</h2>
+            <p>Total Tasks: <span id="total-tasks">0</span></p>
+            <p>Completed Tasks: <span id="completed-tasks">0</span></p>
+            <p>Pending Tasks: <span id="pending-tasks">0</span></p>
+        </div>
+        <div class="dashboard-breakdown">
+            <h2>Task Breakdown by Status</h2>
+            <div id="status-breakdown">
+                <!-- Breakdown will be dynamically inserted here by dashboard.js -->
+            </div>
+        </div>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+</html>
