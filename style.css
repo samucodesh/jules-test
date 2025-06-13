@@ -13,21 +13,6 @@
     --button-danger-hover-bg-color: #c9302c;
 }
 
-.dark-mode {
-    --primary-bg-color: #333;
-    --secondary-bg-color: #444;
-    --text-color: #f1f1f1;
-    --button-bg-color: #007bff;
-    --button-hover-bg-color: #0056b3; /* Added */
-    --button-text-color: white;
-    --border-color: #666;
-    --item-bg-color: #555;
-    --item-completed-bg-color: #222;
-    --item-completed-text-color: #888;
-    --button-danger-bg-color: #dc3545;
-    --button-danger-hover-bg-color: #c82333;
-}
-
 body {
     font-family: sans-serif;
     margin: 0;
